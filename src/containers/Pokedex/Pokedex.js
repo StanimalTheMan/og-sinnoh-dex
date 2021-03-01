@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import Pokemon from "../../components/Pokemon/Pokemon";
+import PokedexEntry from "../../components/PokedexEntry/PokedexEntry";
 import "./Pokedex.css"; // global styling atm
 
 class Pokedex extends Component {
   state = {
     sinnohPokemon: [],
+    showAllPokemon: true,
+    showPokemonEntry: false,
+    selectedPokemonId: null,
   };
 
   componentDidMount() {
