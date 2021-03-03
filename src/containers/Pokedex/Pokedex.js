@@ -11,6 +11,7 @@ class Pokedex extends Component {
     showAllPokemon: true,
     showPokemonEntry: false,
     selectedPokemonId: null,
+    selectedPokemonStats: null,
   };
 
   componentDidMount() {
@@ -29,10 +30,12 @@ class Pokedex extends Component {
     Promise.all(promises).then(() => this.setState({ sinnohPokemon }));
   }
 
-  handlePokemonEntryClick = (id) => {
+  handlePokemonEntryClick = (id, stats) => {
     console.log(id);
+    console.log(stats);
     this.setState({
       selectedPokemonId: id,
+      selectedPokemonStats: stats.map((stat) => stat.base_stat),
       showAllPokemon: false,
     });
     console.log(this.state.selectedPokemonId);
@@ -47,12 +50,19 @@ class Pokedex extends Component {
             key={pokemon.id}
             name={pokemon.name}
             sprite={pokemon.sprites.front_default}
-            clicked={() => this.handlePokemonEntryClick(pokemon.id)}
+            clicked={() =>
+              this.handlePokemonEntryClick(pokemon.id, pokemon.stats)
+            }
           />
         );
       });
     } else {
-      toShow = <PokedexEntry id={this.state.selectedPokemonId} />;
+      toShow = (
+        <PokedexEntry
+          id={this.state.selectedPokemonId}
+          stats={this.state.selectedPokemonStats}
+        />
+      );
     }
     return (
       <div>
