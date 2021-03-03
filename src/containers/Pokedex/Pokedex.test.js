@@ -4,5 +4,5 @@ import Pokedex from "./Pokedex";
 
 test("render h1 element", () => {
   render(<Pokedex />);
-  expect(screen.getByText("Diamond & Pearl Pokedex")).toBeInTheDocument();
+  expect(screen.getByText("Sinnoh Pokedex")).toBeInTheDocument();
 });
