@@ -4,7 +4,7 @@ const pokemon = (props) => {
   return (
     <div>
       <h3>{props.name}</h3>
-      <img src={props.sprite} alt="sprite" />
+      <img src={props.sprite} alt="sprite" onClick={props.clicked} />
     </div>
   );
 };
