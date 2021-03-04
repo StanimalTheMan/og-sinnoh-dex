@@ -1,14 +1,3 @@
-h1 {
-  text-align: center;
-}
-
-.Pokedex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-}
-
 .Pokedex ul {
   list-style: none;
   margin: 0;

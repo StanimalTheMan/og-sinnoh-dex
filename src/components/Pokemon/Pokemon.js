@@ -1,7 +1,5 @@
 import React from "react";
 import Figure from "react-bootstrap/Figure";
-import FigureImage from "react-bootstrap/FigureImage";
-import FigureCaption from "react-bootstrap/FigureCaption";
 
 import "./Pokemon.css";
 
