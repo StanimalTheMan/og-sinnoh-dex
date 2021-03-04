@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Pokedex from "./Pokedex";
+import AllPokemon from "./AllPokemon";
 
 test("render h1 element", () => {
-  render(<Pokedex />);
+  render(<AllPokemon />);
   expect(screen.getByText("Sinnoh Pokedex")).toBeInTheDocument();
 });

@@ -8,13 +8,13 @@ class PokedexEntry extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     axios
       .get(
         `https://pokeapi.co/api/v2/pokemon-species/${this.props.match.params.pokemon}/`
       )
       .then((response) => {
-        console.log(response.data.flavor_text_entries);
+        // console.log(response.data.flavor_text_entries);
         this.setState({
           pokemonImg: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${this.props.location.id}.png`,
           pokemonFlavorText:
