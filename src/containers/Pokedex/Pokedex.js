@@ -66,9 +66,18 @@ class Pokedex extends Component {
     }
     return (
       <div>
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <a href="/">Sinnoh Pokedex</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
         <h1>Sinnoh Pokedex</h1>
         <p>{this.state.showAllPokemon}</p>
-        {toShow}
+        <div className="Pokedex">{toShow}</div>
       </div>
     );
   }
