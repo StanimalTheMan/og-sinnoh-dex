@@ -6,7 +6,7 @@ import Pokedex from "./containers/Pokedex/Pokedex";
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/pokedex">
         <Pokedex />
       </BrowserRouter>
     );
