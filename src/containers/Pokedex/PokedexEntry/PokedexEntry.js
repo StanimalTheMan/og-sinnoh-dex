@@ -18,7 +18,7 @@ class PokedexEntry extends Component {
         this.setState({
           pokemonImg: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${this.props.location.id}.png`,
           pokemonFlavorText:
-            this.props.id === 388
+            this.props.location.id === 388
               ? response.data.flavor_text_entries[5].flavor_text
               : response.data.flavor_text_entries[2].flavor_text,
         });
@@ -31,6 +31,11 @@ class PokedexEntry extends Component {
       <div>
         <p>{this.props.id}</p>
         <img src={this.state.pokemonImg} alt="pokemonImg" />
+        <ul>
+          {this.props.location.types.map((type) => (
+            <li key={type}>{type.type.name}</li>
+          ))}
+        </ul>
         <p>{this.state.pokemonFlavorText}</p>
         <h3>Stats</h3>
         <p>

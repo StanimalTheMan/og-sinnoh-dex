@@ -12,7 +12,7 @@ class Pokedex extends Component {
         <header>
           <ul>
             <li>
-              <a href="/">Sinnoh Pokedex</a>
+              <a href="/pokedex">Sinnoh Pokedex</a>
             </li>
           </ul>
         </header>
