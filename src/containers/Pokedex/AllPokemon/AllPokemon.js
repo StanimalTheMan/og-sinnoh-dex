@@ -21,6 +21,7 @@ class AllPokemon extends Component {
             .then((response) => {
               sinnohPokemon.push(response.data);
             })
+            .catch((err) => console.log(err))
         );
       }
 

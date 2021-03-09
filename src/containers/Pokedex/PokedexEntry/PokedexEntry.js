@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import "./PokedexEntry.css";
+
 class PokedexEntry extends Component {
   state = {
     pokemonImg: null,
@@ -9,6 +11,7 @@ class PokedexEntry extends Component {
 
   componentDidMount() {
     // console.log(this.props);
+    console.log("componentDidMount");
     axios
       .get(
         `https://pokeapi.co/api/v2/pokemon-species/${this.props.match.params.pokemon}/`
@@ -25,10 +28,14 @@ class PokedexEntry extends Component {
       });
   }
 
+  componentDidUpdate() {
+    console.log("componentDidUpdate");
+  }
+
   render() {
     return (
       // <div>Hello</div>
-      <div>
+      <div className="PokedexEntry">
         <p>{this.props.id}</p>
         <img src={this.state.pokemonImg} alt="pokemonImg" />
         <ul>

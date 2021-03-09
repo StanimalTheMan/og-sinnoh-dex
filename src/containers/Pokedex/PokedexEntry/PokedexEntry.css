@@ -1,0 +1,22 @@
+.PokedexEntry p,
+ul,
+h3 {
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .PokedexEntry img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+  }
+}
+
+@media (min-width: 500px) {
+  .PokedexEntry {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
