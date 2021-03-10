@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import AllPokemon from "./AllPokemon/AllPokemon";
 import PokedexEntry from "./PokedexEntry/PokedexEntry";
@@ -16,8 +16,10 @@ class Pokedex extends Component {
             </li>
           </ul>
         </header>
-        <Route path="/" exact component={AllPokemon} />
-        <Route path="/:pokemon" component={PokedexEntry} />
+        <Switch>
+          <Route path="/" exact component={AllPokemon} />
+          <Route path="/:pokemon" component={PokedexEntry} />
+        </Switch>
       </div>
     );
   }

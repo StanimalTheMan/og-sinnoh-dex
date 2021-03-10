@@ -26,7 +26,7 @@ class AllPokemon extends Component {
       }
 
       Promise.all(promises).then(() => {
-        // localStorage.setItem("sinnohPokemon", sinnohPokemon);
+        // localStorage.setItem("sinnohPokemon", JSON.stringify(sinnohPokemon));
         this.setState({ sinnohPokemon });
       });
     } else {

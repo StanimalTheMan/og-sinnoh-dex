@@ -12,7 +12,9 @@ const pokemon = (props) => {
     <Figure className="Pokemon">
       <Figure.Image src={props.sprite} alt="sprite" onClick={props.clicked} />
       <Figure.Caption>
-        <h3 className="text-center">{props.name}</h3>
+        <h3 className="text-center">
+          {props.name[0].toUpperCase() + props.name.substr(1)}
+        </h3>
       </Figure.Caption>
     </Figure>
   );
