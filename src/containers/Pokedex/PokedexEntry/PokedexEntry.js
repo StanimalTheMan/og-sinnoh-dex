@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 import "./PokedexEntry.css";
 
@@ -43,11 +44,12 @@ class PokedexEntry extends Component {
             // id: this.props.id,
           });
         })
-        .catch((err) =>
+        .catch((err) => {
+          console.log("ERROR1");
           this.setState({
             error: true,
-          })
-        );
+          });
+        });
     } else {
       // console.log(this.props);
       console.log(specialPokemon.includes(this.props.location.pathname));
@@ -67,8 +69,8 @@ class PokedexEntry extends Component {
             : `https://pokeapi.co/api/v2/pokemon-species${this.props.location.pathname}`
         );
       };
-      Promise.all([getGeneralPokemonData(), getAdditionalPokemonData()]).then(
-        (results) => {
+      Promise.all([getGeneralPokemonData(), getAdditionalPokemonData()])
+        .then((results) => {
           console.log(results);
           this.setState({
             id: results[0].data.id,
@@ -81,8 +83,13 @@ class PokedexEntry extends Component {
                 : results[1].data.flavor_text_entries[2].flavor_text,
           });
           console.log(this.state);
-        }
-      );
+        })
+        .catch((err) => {
+          console.log("ERROR2");
+          this.setState({
+            error: true,
+          });
+        });
     }
   }
 
@@ -91,6 +98,10 @@ class PokedexEntry extends Component {
   // }
 
   render() {
+    if (this.state.error) {
+      console.log("LADFSFS");
+      return <Redirect to="/"></Redirect>;
+    }
     const typeStyles = {
       width: "160px",
       height: "80px",
