@@ -3,6 +3,14 @@ import axios from "axios";
 
 import "./PokedexEntry.css";
 
+// names of pokemon that have to be handled specially to get data
+// wormadam, giratina, shaymin
+const specialPokemon = [
+  "/wormadam-plant",
+  "/giratina-altered",
+  "/shaymin-land",
+];
+
 class PokedexEntry extends Component {
   state = {
     pokemonImg: null,
@@ -19,7 +27,7 @@ class PokedexEntry extends Component {
       console.log(this.props);
       axios
         .get(
-          `https://pokeapi.co/api/v2/pokemon-species/${this.props.match.params.pokemon}/`
+          `https://pokeapi.co/api/v2/pokemon-species/${this.props.location.id}/`
         )
         .then((response) => {
           // console.log(response.data.flavor_text_entries);
@@ -41,17 +49,22 @@ class PokedexEntry extends Component {
           })
         );
     } else {
-      console.log(this.props);
+      // console.log(this.props);
+      console.log(specialPokemon.includes(this.props.location.pathname));
       // helper functions for axios
       const getGeneralPokemonData = () => {
         return axios.get(
-          `https://pokeapi.co/api/v2/pokemon${this.props.location.pathname}/`
+          `https://pokeapi.co/api/v2/pokemon${this.props.location.pathname}`
         );
       };
 
       const getAdditionalPokemonData = () => {
         return axios.get(
-          `https://pokeapi.co/api/v2/pokemon-species${this.props.location.pathname}`
+          specialPokemon.includes(this.props.location.pathname)
+            ? `https://pokeapi.co/api/v2/pokemon-species${
+                this.props.location.pathname.split("-")[0]
+              }/`
+            : `https://pokeapi.co/api/v2/pokemon-species${this.props.location.pathname}`
         );
       };
       Promise.all([getGeneralPokemonData(), getAdditionalPokemonData()]).then(
