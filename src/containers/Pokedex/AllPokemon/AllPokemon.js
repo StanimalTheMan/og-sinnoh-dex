@@ -11,29 +11,22 @@ class AllPokemon extends Component {
   };
 
   componentDidMount() {
-    if (localStorage.getItem("sinnohPokemon") === null) {
-      const sinnohPokemon = [];
-      const promises = [];
-      for (let pokedexNum = 387; pokedexNum <= 493; pokedexNum++) {
-        promises.push(
-          axios
-            .get(`https://pokeapi.co/api/v2/pokemon/${pokedexNum}/`)
-            .then((response) => {
-              sinnohPokemon.push(response.data);
-            })
-            .catch((err) => console.log(err))
-        );
-      }
-
-      Promise.all(promises).then(() => {
-        // localStorage.setItem("sinnohPokemon", JSON.stringify(sinnohPokemon));
-        this.setState({ sinnohPokemon });
-      });
-    } else {
-      this.setState({
-        sinnohPokemon: JSON.parse(localStorage.getItem("sinnohPokemon")),
-      });
+    const sinnohPokemon = [];
+    const promises = [];
+    for (let pokedexNum = 387; pokedexNum <= 493; pokedexNum++) {
+      promises.push(
+        axios
+          .get(`https://pokeapi.co/api/v2/pokemon/${pokedexNum}/`)
+          .then((response) => {
+            sinnohPokemon.push(response.data);
+          })
+          .catch((err) => console.log(err))
+      );
     }
+
+    Promise.all(promises).then(() => {
+      this.setState({ sinnohPokemon });
+    });
   }
 
   //   handlePokemonEntryClick = (id, stats) => {
