@@ -34,7 +34,7 @@ class PokedexEntry extends Component {
           this.setState({
             pokemonImg: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${this.props.location.id}.png`,
             pokemonFlavorText:
-              this.props.location.id === 388
+              this.props.location.id === 388 || this.props.location.id === 479
                 ? response.data.flavor_text_entries[5].flavor_text
                 : response.data.flavor_text_entries[2].flavor_text,
             // redundant setState if come from home page so temporary inefficient solution for now
@@ -76,7 +76,7 @@ class PokedexEntry extends Component {
             types: results[0].data.types,
             pokemonImg: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${results[0].data.id}.png`, // assume user doesn't manually input pokemon id in url
             pokemonFlavorText:
-              this.props.location.id === 388
+              results[0].data.id === 388 || results[0].data.id === 479
                 ? results[1].data.flavor_text_entries[5].flavor_text
                 : results[1].data.flavor_text_entries[2].flavor_text,
           });
