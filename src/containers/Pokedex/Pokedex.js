@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 
 import AllPokemon from "./AllPokemon/AllPokemon";
 import PokedexEntry from "./PokedexEntry/PokedexEntry";
@@ -11,13 +11,16 @@ class Pokedex extends Component {
     return (
       <div className="Pokedex">
         <header>
-          <ul>
+          {/* <ul>
             <li>
               <a href="/">
                 <img src={pokeball} alt="pokeball" width="50" height="50"></img>
               </a>
-            </li>
-          </ul>
+            </li>            
+          </ul> */}
+          <Link to="/">
+            <img src={pokeball} alt="pokeball" width="50" height="50"></img>
+          </Link>
         </header>
         <Switch>
           <Route path="/" exact component={AllPokemon} />
