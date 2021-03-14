@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import AllPokemon from "./AllPokemon/AllPokemon";
 import PokedexEntry from "./PokedexEntry/PokedexEntry";
+import pokeball from "../../assets/pokeball.png";
 import "./Pokedex.css"; // global styling atm
 
 class Pokedex extends Component {
@@ -12,7 +13,9 @@ class Pokedex extends Component {
         <header>
           <ul>
             <li>
-              <a href="/pokedex">Sinnoh Pokedex</a>
+              <a href="/">
+                <img src={pokeball} alt="pokeball" width="50" height="50"></img>
+              </a>
             </li>
           </ul>
         </header>
