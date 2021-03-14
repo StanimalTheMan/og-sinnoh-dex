@@ -11,13 +11,6 @@ class Pokedex extends Component {
     return (
       <div className="Pokedex">
         <header>
-          {/* <ul>
-            <li>
-              <a href="/">
-                <img src={pokeball} alt="pokeball" width="50" height="50"></img>
-              </a>
-            </li>            
-          </ul> */}
           <Link to="/">
             <img src={pokeball} alt="pokeball" width="50" height="50"></img>
           </Link>

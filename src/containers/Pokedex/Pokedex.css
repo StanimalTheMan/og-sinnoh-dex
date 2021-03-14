@@ -9,7 +9,8 @@
   margin: 20px;
 }
 
-.Pokedez a {
-  text-decoration: none;
-  color: black;
+.Pokedex img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
