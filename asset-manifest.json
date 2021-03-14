@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/og-sinnoh-dex/static/css/main.9ea1dc85.chunk.css",
+    "main.js": "/og-sinnoh-dex/static/js/main.969465c8.chunk.js",
+    "main.js.map": "/og-sinnoh-dex/static/js/main.969465c8.chunk.js.map",
+    "runtime-main.js": "/og-sinnoh-dex/static/js/runtime-main.26cfdf9d.js",
+    "runtime-main.js.map": "/og-sinnoh-dex/static/js/runtime-main.26cfdf9d.js.map",
+    "static/js/2.6be56043.chunk.js": "/og-sinnoh-dex/static/js/2.6be56043.chunk.js",
+    "static/js/2.6be56043.chunk.js.map": "/og-sinnoh-dex/static/js/2.6be56043.chunk.js.map",
+    "static/js/3.e46e580f.chunk.js": "/og-sinnoh-dex/static/js/3.e46e580f.chunk.js",
+    "static/js/3.e46e580f.chunk.js.map": "/og-sinnoh-dex/static/js/3.e46e580f.chunk.js.map",
+    "index.html": "/og-sinnoh-dex/index.html",
+    "static/css/main.9ea1dc85.chunk.css.map": "/og-sinnoh-dex/static/css/main.9ea1dc85.chunk.css.map",
+    "static/js/2.6be56043.chunk.js.LICENSE.txt": "/og-sinnoh-dex/static/js/2.6be56043.chunk.js.LICENSE.txt",
+    "static/media/pokeball.14f577ae.png": "/og-sinnoh-dex/static/media/pokeball.14f577ae.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.26cfdf9d.js",
+    "static/js/2.6be56043.chunk.js",
+    "static/css/main.9ea1dc85.chunk.css",
+    "static/js/main.969465c8.chunk.js"
+  ]
+}
