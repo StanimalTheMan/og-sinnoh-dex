@@ -2,9 +2,10 @@
 
 # Homepage
 
+![Home](/src/assets/home.png)
+
 # A Pokemon's Pokedex Entry
 
-![Home](/src/assets/home.png)
 ![Pokemon](/src/assets/pokemon.png)
 
 ## Getting Started with Create React App
