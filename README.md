@@ -1,5 +1,7 @@
 # This app lets users view Pokedex entries of their favorite Sinnoh Pokemon. With Sinnoh/Gen 4 remakes coming out later this year, there isn't a better time for nostalgic purposes. It can be improved in terms of caching the data upon receiving the HTTP responses, better testing, and maybe using modern React via Hooks. Anyways, feel free to look up your favorite Sinnoh Pokemon.
 
+http://StanimalTheMan.github.io/og-sinnoh-dex
+
 # Homepage
 
 ![Home](/src/assets/home.png)
