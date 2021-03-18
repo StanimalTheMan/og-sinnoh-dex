@@ -113,6 +113,10 @@ class PokedexEntry extends Component {
     if (this.state.id && this.state.stats && this.state.types) {
       toRender = (
         <React.Fragment>
+          <h1>
+            {this.props.location.pathname.substring(1)[0].toUpperCase() +
+              this.props.location.pathname.substring(1).substring(1)}
+          </h1>
           <img src={this.state.pokemonImg} alt="pokemonImg" />
           <ul>
             {this.state.types.map((type) => {
@@ -215,6 +219,10 @@ class PokedexEntry extends Component {
       toRender = (
         <React.Fragment>
           <p>{this.props.id}</p>
+          <h1>
+            {this.props.location.pathname.substring(1)[0].toUpperCase() +
+              this.props.location.pathname.substring(1).substring(1)}
+          </h1>
           <img src={this.state.pokemonImg} alt="pokemonImg" />
           <ul>
             {this.props.location.types.map((type) => {
