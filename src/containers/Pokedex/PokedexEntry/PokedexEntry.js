@@ -23,15 +23,12 @@ class PokedexEntry extends Component {
   };
 
   componentDidMount() {
-    console.log("componentDidMount");
     if (this.props.location.id) {
-      console.log(this.props);
       axios
         .get(
           `https://pokeapi.co/api/v2/pokemon-species/${this.props.location.id}/`
         )
         .then((response) => {
-          // console.log(response.data.flavor_text_entries);
           this.setState({
             pokemonImg: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${this.props.location.id}.png`,
             pokemonFlavorText:
@@ -45,14 +42,11 @@ class PokedexEntry extends Component {
           });
         })
         .catch((err) => {
-          console.log("ERROR1");
           this.setState({
             error: true,
           });
         });
     } else {
-      // console.log(this.props);
-      console.log(specialPokemon.includes(this.props.location.pathname));
       // helper functions for axios
       const getGeneralPokemonData = () => {
         return axios.get(
@@ -71,7 +65,6 @@ class PokedexEntry extends Component {
       };
       Promise.all([getGeneralPokemonData(), getAdditionalPokemonData()])
         .then((results) => {
-          console.log(results);
           this.setState({
             id: results[0].data.id,
             stats: results[0].data.stats,
@@ -82,10 +75,8 @@ class PokedexEntry extends Component {
                 ? results[1].data.flavor_text_entries[5].flavor_text
                 : results[1].data.flavor_text_entries[2].flavor_text,
           });
-          console.log(this.state);
         })
         .catch((err) => {
-          console.log("ERROR2");
           this.setState({
             error: true,
           });
@@ -93,13 +84,8 @@ class PokedexEntry extends Component {
     }
   }
 
-  // componentDidUpdate() {
-  //   console.log("componentDidUpdate");
-  // }
-
   render() {
     if (this.state.error) {
-      console.log("LADFSFS");
       return <Redirect to="/"></Redirect>;
     }
     const typeStyles = {

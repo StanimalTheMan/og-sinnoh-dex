@@ -29,17 +29,6 @@ class AllPokemon extends Component {
     });
   }
 
-  //   handlePokemonEntryClick = (id, stats) => {
-  //     console.log(id);
-  //     console.log(stats);
-  //     this.setState({
-  //       selectedPokemonId: id,
-  //       selectedPokemonStats: stats.map((stat) => stat.base_stat),
-  //       showAllPokemon: false,
-  //     });
-  //     console.log(this.state.selectedPokemonId);
-  //   };
-
   render() {
     return (
       <div className="AllPokemon">
